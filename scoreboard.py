@@ -13,14 +13,14 @@ class Scoreboard(Turtle):
         self.goto(0, 280)
         self.score = 0
         self.high_score = 0
-        self.import_high_score()
+        #self.import_high_score()
         self.update_scoreboard()
 
-    def import_high_score(self):
-        file = open("highscore.txt")
-        content = file.read()
-        self.high_score = int(content)
-        file.close()
+    # def import_high_score(self):
+    #     file = open("snakeGame/highscore.txt", mode="a+")
+    #     content = file.read()
+    #     self.high_score = int(content)
+    #     file.close()
 
     def update_scoreboard(self):
         self.clear()
@@ -31,9 +31,9 @@ class Scoreboard(Turtle):
             self.high_score = self.score
             self.score = 0
             self.update_scoreboard()
-            file = open("highscore.txt", mode="w")
-            file.write(str(self.high_score))
-            file.close()
+            # file = open("snakeGame/highscore.txt", mode="a+")
+            # file.write(str(self.high_score))
+            # file.close()
         else:
             self.score = 0
             self.update_scoreboard()
